@@ -1,8 +1,8 @@
 # http://classic.battle.net/war3/human/units/footman.shtml
 
-class Footman
+class Footman < Unit
 
-  attr_accessor :health_points, :attack_power
+  attr_reader :attack_power, :health_points
 
   def initialize
     @health_points = 60

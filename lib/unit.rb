@@ -5,7 +5,14 @@ class Unit
   def initialize(health, attack)
     @health_points = health
     @attack_power = attack
-    self.freeze
+  end
+
+  def damage(points)
+    @health_points -= points
+  end
+
+  def attack!(target)
+    target.damage(attack_power)
   end
 
 end
