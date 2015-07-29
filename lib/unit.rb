@@ -12,7 +12,7 @@ class Unit
   end
 
   def attack!(target, points=@attack_power)
-    if can_be_attacked?(target)
+    if can_attack? && can_be_attacked?(target)
       target.damage(points)
     else
       false
