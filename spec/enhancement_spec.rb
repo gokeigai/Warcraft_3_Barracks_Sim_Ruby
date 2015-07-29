@@ -129,12 +129,12 @@ describe SiegeEngine do
     @siege = SiegeEngine.new
   end
 
+  describe "#attack" do
   it "should not attack Peasant or Footman and should return false" do
     footman = Footman.new
     expect(@siege.attack!(footman)).to eq(false)
   end
 
-  describe "#attack" do
     it "attacks Barracks but does double of its AP" do
       enemy = Barracks.new
       @siege.attack!(enemy)
