@@ -9,4 +9,13 @@ class Footman < Unit
     @attack_power = 10
   end
 
+  def attack!(target, points=@attack_power)
+    ap = points
+    
+    if target.class.to_s == "Barracks"
+      ap = (@attack_power / 2).ceil
+    end
+
+    super(target, ap)
+  end
 end

@@ -11,8 +11,24 @@ class Unit
     @health_points -= points
   end
 
-  def attack!(target)
-    target.damage(attack_power)
+  def attack!(target, points=@attack_power)
+    if can_be_attacked?(target)
+      target.damage(points)
+    else
+      false
+    end
+  end
+
+  def dead?
+    health_points <= 0
+  end
+
+  def can_attack?
+    !dead?
+  end
+
+  def can_be_attacked?(enemy)
+    !enemy.dead?
   end
 
 end
